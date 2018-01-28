@@ -1,0 +1,17 @@
+nav
+  ul.pager
+    if data.page<=1
+      li
+        span(style='float: left') 没有上一页了
+    else
+      li
+        a(style='float: left', href='#{data.url}page=#{data.page-1}')
+          span(aria-hidden="true") &larr;上一页
+    li(style='line-height: 30px; height: 30px;') 一共有 #{data.count} 条数据，每页显示 #{data.limit} 条数据， 一共 #{data.pages} 页, 当前第 #{data.page} 页
+    if data.page>=data.pages
+      li
+        span(style='float: right') 没有下一页了
+    else
+      li
+        a(style='float: right', href='#{data.url}page=#{data.page + 1}') 下一页
+          span(aria-hidden="true") &rarr;

@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+
+  .panel.panel-warning
+    .panel-heading
+      h3.panel-title 错误提示
+      .panel-body
+        #{message}
+      .panel-footer
+        a(href="javascript:window.history.back();") 返回上一步
